@@ -21,6 +21,7 @@ db.once('open', function() {
   console.log("Connected to MongoDB");
 });
 
+// Routes
 app.use('/todos', todoRoutes);
 
 // Start the server

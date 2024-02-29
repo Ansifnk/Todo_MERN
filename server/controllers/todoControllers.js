@@ -47,19 +47,7 @@ exports.updateTodoDone = async (req, res) => {
   }
 };
 
-exports.markTodoAsNotDone = async (req, res) => {
-  try {
-    const { id } = req.params;
-    const todo = await Todo.findByIdAndUpdate(
-      id,
-      { done: false },
-      { new: true }
-    );
-    res.json(todo);
-  } catch (err) {
-    res.status(400).json({ message: err.message });
-  }
-};
+
 exports.getTodos = async (req, res) => {
   const { filter } = req.params;
   try {

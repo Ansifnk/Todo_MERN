@@ -1,0 +1,9 @@
+.header{
+    width: 100%;
+    padding: 10px 5px;
+    background-color: violet;
+}
+.header_title{
+    font-size: 25px;
+    font-weight: bold;
+}

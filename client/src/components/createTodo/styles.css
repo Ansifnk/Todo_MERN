@@ -1,0 +1,18 @@
+.create_container {
+    padding: 10px;
+  background-color: rgb(226, 221, 221);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 10px;
+}
+
+.title_input {
+  width: 100%;
+padding: 5px;
+font-size: 18px;
+}
+.title_input:focus{
+    outline: none;
+}

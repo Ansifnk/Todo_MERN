@@ -25,7 +25,7 @@ const Tab = ({ active, onChange }) => {
         onClick={() => onChange("All")}
       />
       <Item
-        label="UnCompleted"
+        label="Not Completed"
         selected={active == "UnCompleted"}
         onClick={() => onChange("UnCompleted")}
       />

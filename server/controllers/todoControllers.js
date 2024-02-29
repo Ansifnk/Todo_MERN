@@ -2,8 +2,8 @@ const Todo = require("../schemas/todSchema");
 
 exports.createTodo = async (req, res) => {
   try {
-    const { title } = req.body;
-    const todo = new Todo({ title });
+    const { title, description } = req.body;
+    const todo = new Todo({ title, description });
     await todo.save();
     res.status(201).json(todo);
   } catch (err) {
@@ -47,14 +47,13 @@ exports.updateTodoDone = async (req, res) => {
   }
 };
 
-
 exports.getTodos = async (req, res) => {
   const { filter } = req.params;
   try {
     const todos = await Todo.find({
       ...(filter != "All" && { done: filter == "Completed" ? true : false }),
-    });
-    console.log(todos,filter)
+      
+    }) .sort({  createdAt: 1,done: 1, })
     res.json(todos);
   } catch (error) {
     res.status(500).json({ message: error.message });

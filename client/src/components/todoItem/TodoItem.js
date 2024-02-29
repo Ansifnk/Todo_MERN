@@ -4,7 +4,7 @@ import axios from "axios";
 import { baseUrl } from "../../utils/constants";
 import Button from "../button/Button";
 const TodoItem = ({ todo,getTodos }) => {
-  const { _id: id, title, done } = todo;
+  const { _id: id, title, done,description } = todo;
   const [checked, setChecked] = useState(done);
 
   const updateDone = async (event) => {
@@ -13,6 +13,7 @@ const TodoItem = ({ todo,getTodos }) => {
         done: event.target.checked,
       });
       setChecked(event.target.checked);
+      getTodos()
     } catch (error) {
       console.error(
         "Error updating todo:",
@@ -36,8 +37,8 @@ const TodoItem = ({ todo,getTodos }) => {
   };
 
   return (
-    <div className="item_container">
-      <p>{title}</p>
+    <div className="item_container" title={description} >
+      <p style={{textDecoration:checked&&'line-through'}} >{title}</p>
       <div style={{ flex: 1 }} />
       <input
         title="Mark as done"

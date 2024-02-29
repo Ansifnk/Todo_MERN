@@ -44,11 +44,17 @@ const Home = () => {
       {!loading && (
         <div className="home_sub">
           <CreateTodo onCreate={() => getTodos("All")} />
-          <Tab active={activeTab} onChange={onTabChange} />
-          <div className="list_wrapper">
-            {todos.map((todo) => (
-              <TodoItem getTodos={()=>getTodos(activeTab)} todo={todo} key={todo._id} />
-            ))}
+          <div className="list_sub" >
+            <Tab active={activeTab} onChange={onTabChange} />
+            <div className="list_wrapper">
+              {todos.map((todo) => (
+                <TodoItem
+                  getTodos={() => getTodos(activeTab)}
+                  todo={todo}
+                  key={todo._id}
+                />
+              ))}
+            </div>
           </div>
         </div>
       )}

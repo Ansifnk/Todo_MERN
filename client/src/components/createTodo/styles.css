@@ -1,18 +1,26 @@
 .create_container {
-    padding: 10px;
-  background-color: rgb(226, 221, 221);
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 5px;
+  margin: 10px;
+  padding: 10px;
+  /* background-color: rgb(226, 221, 221); */
+  flex: 1;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
+.input_wrapper {
+  margin-bottom: 10px;
+  width: 90%;
+}
 .title_input {
   width: 100%;
-padding: 5px;
-font-size: 18px;
+  padding: 3px;
+  font-size: 12px;
 }
-.title_input:focus{
-    outline: none;
+.title_input:focus {
+  outline: none;
+}
+.create_button {
+  margin-left: 5px;
+  width: 250px;
 }
